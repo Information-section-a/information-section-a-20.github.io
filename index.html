@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Welcome to Section A.We will get the information here very easily.On this website we will get all the information in our section.Thanks for staying with me">
+    <meta name="keywords" content="infprmation,scetion a,vu student,vu,20th batch vu,informatiom-section a">
+    <meta name="author" content="inmformation,setion a">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Information</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+
+<body onload="initClock()">
+    <div class="scroll-up-btn">
+        <i class="fas fa-angle-up"></i>
+    </div>
+    <nav class="navbar">
+        <div class="max-width">
+            <div class="logo"><a href="#"><span>Section-A.</span></a></div>
+            <ul class="menu">
+                <li><a href="#home" class="menu-btn">Home</a></li>
+                <li><a href="#about" class="menu-btn">Notice</a></li>
+                <li><a href="#services" class="menu-btn">Teacher</a></li>
+                <li><a href="http://202.5.52.152:8081" target="_blank">Result</a></li>
+                <!--<li><a href="#sks" class="menu-btn">Result</a></li>-->
+                <li><a href="#teams" class="menu-btn">Student</a></li>
+                <li><a href="#contact" class="menu-btn">Contact</a></li>
+            </ul>
+            <div class="menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- home section start -->
+    <section class="home" id="home">
+        <marquee class=".ghosona1"> >> 1 তারিখে SD ফাইনাল হবে >> 2 তারিখে সিপ্লা উপর ইম্প্রুভপরীক্ষা আছে </marquee>
+
+
+        <div class="max-width">
+
+            <div class="home-content">
+
+
+
+                <div class="side2">
+
+                    <div>
+                        <div class="datetime">
+                            <div class="date">
+                                <span id="dayname">Day</span>,
+                                <span id="month">Month</span>
+                                <span id="daynum">00</span>,
+                                <span id="year">Year</span>
+                            </div>
+                            <div class="time">
+                                <span id="hour">00</span>:
+                                <span id="minutes">00</span>:
+                                <span id="seconds">00</span>
+                                <span id="period">AM</span>
+                            </div>
+                        </div>
+                        <div class="routine">
+                            <h1 id="class-1"></h1>
+                            <h1 id="class-2"></h1>
+                        </div>
+                        <!--digital clock end-->
+
+                        <script type="text/javascript">
+                            let class_one = document.getElementById("class-1");
+                            let class_two = document.getElementById("class-2");
+                            let today = new Date().getDay();
+                            if (today == 0) {
+                                class_one.innerHTML = "(9.00-10.25) Basic Statistics and Probability Course (9.00-10.25) ";
+                                class_two.innerHTML = "Computer Networks (10.30-11.55)";
+                            } else if (today == 1) {
+                                class_one.innerHTML = "Computer Networks Lab (12.00-2.00)";
+                                class_two.innerHTML = "Digital Logic  Design (2.00-3.25)";
+                            } else if (today == 2) {
+                                class_two.innerHTML = "Computer Networks (10.30-11.55)";
+                                class_one.innerHTML = " Basic Statistics and Probability Course (9.00-10.25) ";
+                            } else if (today == 3) {
+                                class_two.innerHTML = "Software Development Lab (2.00-3.00)";
+                                class_one.innerHTML = "Digital Logic  Design  (10.30-11.55)";
+                            } else if (today == 4) {
+                                class_two.innerHTML = "NONE";
+                                class_one.innerHTML = "Digital Logic Design Lab  (11.00-1.00)";
+                            } else if (today == 5) {
+                                class_two.innerHTML = "Class off";
+                                class_one.innerHTML = "class off";
+                            } else if (today == 6) {
+                                class_two.innerHTML = "Class off";
+                                class_one.innerHTML = "Class off";
+                            }
+
+                            function updateClock() {
+                                var now = new Date();
+                                var dname = now.getDay(),
+                                    mo = now.getMonth(),
+                                    dnum = now.getDate(),
+                                    yr = now.getFullYear(),
+                                    hou = now.getHours(),
+                                    min = now.getMinutes(),
+                                    sec = now.getSeconds(),
+                                    pe = "AM";
+
+                                if (hou >= 12) {
+                                    pe = "PM";
+                                }
+                                if (hou == 0) {
+                                    hou = 12;
+                                }
+                                if (hou > 12) {
+                                    hou = hou - 12;
+                                }
+
+                                Number.prototype.pad = function(digits) {
+                                    for (var n = this.toString(); n.length < digits; n = 0 + n);
+                                    return n;
+                                }
+
+                                var months = ["January", "February", "March", "April", "May", "June", "July", "Augest", "September", "October", "November", "December"];
+                                var week = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+                                var ids = ["dayname", "month", "daynum", "year", "hour", "minutes", "seconds", "period"];
+                                var values = [week[dname], months[mo], dnum.pad(2), yr, hou.pad(2), min.pad(2), sec.pad(2), pe];
+                                for (var i = 0; i < ids.length; i++)
+                                    document.getElementById(ids[i]).firstChild.nodeValue = values[i];
+
+                            }
+
+                            function initClock() {
+                                updateClock();
+                                window.setInterval("updateClock()", 1);
+
+                            }
+                        </script>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- about section start -->
+    <section class="about" id="about">
+        <div class="max-width">
+            <h2 class="title">Notice</h2>
+            <div class="about-content">
+                <div class="column left">
+
+                    <img src="images/n.jpg" alt="">
+                </div>
+                <div class="column right">
+                    <li>1 তারিখে SD ফাইনাল হবে</li>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- services section start -->
+    <section class="services" id="services">
+        <div class="max-width">
+            <h2 class="title">Teacher</h2>
+            <div class="serv-content">
+                <div class="card">
+                    <div class="box">
+                        <i> </i>
+                        <div class="text">Course Title: Basic Statistics and Probability Course </div>
+                        <p>Code: STA 231<br> Teacher: Ahammed Hossain <br>assistant Professor Department of CSE<br></p>
+                        <br>
+                        <p>
+                            <ul class="b">
+                                <li class="a"> <a href="http://www.facebook.com" target="_blank"><i class="fab fa-facebook-f" >  </i></a></li>
+                                <li class="a"><a href="tel:01945177029"><i class="fas fa-phone-volume"></i></a></li>
+
+
+                            </ul>
+                        </p>
+
+
+
+
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <i></i>
+                        <div class="text"> Course Title: Digital Logic Design </div>
+                        <p>Course Code: CSE 231 <br>Course Teacher: Mst. Jannatul <br>Ferdous(Lecturer)<br> Department of CSE</p>
+
+                        <br>
+                        <p>
+                            <ul class="b">
+                                <li class="a"> <a href="http://www.facebook.com" target="_blank"><i class="fab fa-facebook-f" >  </i></a></li>
+                                <li class="a"><a href="tel:01705006272"><i class="fas fa-phone-volume"></i></a></li>
+
+
+                            </ul>
+                        </p>
+
+                    </div>
+                </div>
+
+
+                <div class="card">
+                    <div class="box">
+                        <i></i>
+                        <div class="text">Course Title: Digital Logic Design Lab </div>
+                        <p>Course Code: CSE 232 <br>Course Teacher: Monika Kabir <br> (Lecturer)<br>Department of CSE</p>
+                        <br>
+                        <p>
+                            <ul class="b">
+                                <li class="a"> <a href="http://www.facebook.com" target="_blank"><i class="fab fa-facebook-f" >  </i></a></li>
+                                <li class="a"><a href="tel:01705006272"><i class="fas fa-phone-volume"></i></a></li>
+
+
+                            </ul>
+                        </p>
+
+                    </div>
+                </div>
+
+
+
+
+                <div class="card">
+                    <div class="box">
+                        <i></i>
+                        <div class="text">Course Title: Computer Networks</div>
+                        <p>Course Code: CSE 233 <br> Course Teacher: Abdullah Al Shiam Lecturer(Provisional)<br> Department of CSE</p>
+
+                        <br>
+                        <p>
+                            <ul class="b">
+                                <li class="a"> <a href="http://www.facebook.com" target="_blank"><i class="fab fa-facebook-f" >  </i></a></li>
+                                <li class="a"><a href="tel:01531133285"><i class="fas fa-phone-volume"></i></a></li>
+
+
+                            </ul>
+                        </p>
+
+
+                    </div>
+                </div>
+
+
+                <div class="card">
+                    <div class="box">
+                        <i></i>
+                        <div class="text">Course Title: Computer Networks Lab </div>
+                        <p>Lab Course Code: CSE 234 <br> Course Teacher: Md. Nahid Hasan <br>Abdullah Al Shiam <br>Lecturer Department of CSE</p>
+
+                        <br>
+                        <p>
+                            <ul class="b">
+                                <li class="a"> <a href="http://www.facebook.com" target="_blank"><i class="fab fa-facebook-f" >  </i></a></li>
+                                <li class="a"><a href="tel:01531133285"><i class="fas fa-phone-volume"></i></a></li>
+
+
+                            </ul>
+                        </p>
+
+                    </div>
+                </div>
+
+
+                <div class="card">
+                    <div class="box">
+                        <i></i>
+                        <div class="text">Course Title: Software Development Lab </div>
+                        <p>Course Code: CSE 236<br> Course Teacher: Arifa Ferdousi<br>Assistant Professor,Department of CSE</p>
+                        <br>
+                        <p>
+                            <ul class="b">
+                                <li class="a"> <a href="http://www.facebook.com" target="_blank"><i class="fab fa-facebook-f" >  </i></a></li>
+                                <li class="a"><a href="tel:01717135572"><i class="fas fa-phone-volume"></i></a></li>
+
+
+                            </ul>
+                        </p>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+
+
+    <!-- teams section start -->
+    <section class="teams" id="teams">
+        <div class="max-width">
+            <h2 class="title">Student</h2>
+            <div class="carousel owl-carousel">
+                <div class="card">
+                    <div class="box">
+                        <img src="images/profile-1.png" alt="">
+                        <div class="text1">Anik Das</div>
+                        <p>ID: 191311003</p>
+                        <p>
+                            <ul class="b">
+                                <li class="a"> <a href="https://www.facebook.com/anikjoy06" target="_blank"><i class="fab fa-facebook-f" >  </i></a></li>
+                                <li class="a"><a href="tel:01724088715"><i class="fas fa-phone-volume"></i> </a> </li>
+                                <li class="a"><a><i class="fab fa-whatsapp-square"></i></a></li>
+
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+
+
+
+
+                <!--stu-->
+
+
+                <div class="card">
+                    <div class="box">
+                        <img src="images/profile-2.png" alt="">
+                        <div class="text1">Shadia Sultana Shethy</div>
+                        <p>ID: 191311005</p>
+                        <p>
+                            <ul class="b">
+                                <li class="a"> <a href="https://www.facebook.com/shadia.sultana.31521" target="_blank"><i class="fab fa-facebook-f" >  </i></a></li>
+                                <li class="a"><a href="tel:01521119834"><i class="fas fa-phone-volume"></i></a></li>
+                                <li class="a"><i class="fab fa-whatsapp-square"></i></li>
+
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <img src="images/profile-1.png" alt="">
+                        <div class="text1">Khalid Saifullah Sabbir</div>
+                        <p>ID: 191311009</p>
+                        <p>
+                            <ul class="b">
+                                <li class="a"> <a href="https://www.facebook.com/khalid.saifullah.10004694" target="_blank"><i class="fab fa-facebook-f" >  </i></a></li>
+                                <li class="a"><a href="tel:01756896743"><i class="fas fa-phone-volume"></i></a></li>
+                                <li class="a"><i class="fab fa-whatsapp-square"></i></li>
+
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <img src="images/profile-1.png" alt="">
+                        <div class="text1">Taufiqur Rahman</div>
+                        <p>ID:191311010</p>
+                        <p>
+                            <ul class="b">
+                                <li class="a"> <a href="https://www.facebook.com/taufiqur.rrahman.7/" target="_blank"><i class="fab fa-facebook-f" >  </i></a></li>
+                                <li class="a"><a href="tel:0175698153"><i class="fas fa-phone-volume"></i></a></li>
+                                <li class="a"><i class="fab fa-whatsapp-square"></i></li>
+
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <img src="images/profile-1.png" alt="">
+                        <div class="text1">Md. Asif Istiak</div>
+                        <p>ID:191311011</p>
+                        <p>
+                            <ul class="b">
+                                <li class="a"> <a href="http://www.facebook.com" target="_blank"><i class="fab fa-facebook-f" >  </i></a></li>
+                                <li class="a"><a href="tel:01885449198"><i class="fas fa-phone-volume"></i></a></li>
+                                <li class="a"><i class="fab fa-whatsapp-square"></i></li>
+
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <img src="images/profile-2.png" alt="">
+                        <div class="text1">Zarin Sharmin</div>
+                        <p>ID:191311013</p>
+                        <p>
+                            <ul class="b">
+                                <li class="a"> <a href="http://www.facebook.com" target="_blank"><i class="fab fa-facebook-f" >  </i></a></li>
+                                <li class="a"><i class="fas fa-phone-volume"></i></li>
+                                <li class="a"><i class="fab fa-whatsapp-square"></i></li>
+
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <img src="images/profile-1.png" alt="">
+                        <div class="text1">Golam Ahnaf Zadid</div>
+                        <p>ID:191311014</p>
+                        <p>
+                            <ul class="b">
+                                <li class="a"> <a href="http://www.facebook.com" target="_blank"><i class="fab fa-facebook-f" >  </i></a></li>
+                                <li class="a"><a href="tel"><i class="fas fa-phone-volume"></i></a></li>
+                                <li class="a"><i class="fab fa-whatsapp-square"></i></li>
+
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <img src="images/profile-2.png" alt="">
+                        <div class="text1">Rukayia Yesmin</div>
+                        <p>ID:191311015</p>
+                        <p>
+                            <ul class="b">
+                                <li class="a"> <a href="http://www.facebook.com" target="_blank"><i class="fab fa-facebook-f" >  </i></a></li>
+                                <li class="a"><a href="tel"><i class="fas fa-phone-volume"></i></a></li>
+                                <li class="a"><i class="fab fa-whatsapp-square"></i></li>
+
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <img src="images/profile-1.png" alt="">
+                        <div class="text1">Sayeka Islam Safa</div>
+                        <p>ID:191311016</p>
+                        <p>
+                            <ul class="b">
+                                <li class="a"> <a href="http://www.facebook.com" target="_blank"><i class="fab fa-facebook-f" >  </i></a></li>
+                                <li class="a"><a href="tel"><i class="fas fa-phone-volume"></i></a></li>
+                                <li class="a"><i class="fab fa-whatsapp-square"></i></li>
+
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <img src="images/profile-1.png" alt="">
+                        <div class="text1">Md. Mehedi Hasan</div>
+                        <p>ID:191311019</p>
+                        <p>
+                            <ul class="b">
+                                <li class="a"> <a href="http://www.facebook.com" target="_blank"><i class="fab fa-facebook-f" >  </i></a></li>
+                                <li class="a"><a href="tel"><i class="fas fa-phone-volume"></i></a></li>
+                                <li class="a"><i class="fab fa-whatsapp-square"></i></li>
+
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <img src="images/profile-1.png" alt="">
+                        <div class="text1">Tawhid Alahi Munna</div>
+                        <p>ID:191311021</p>
+                        <p>
+                            <ul class="b">
+                                <li class="a"> <a href="http://www.facebook.com" target="_blank"><i class="fab fa-facebook-f" >  </i></a></li>
+                                <li class="a"><a href="tel"><i class="fas fa-phone-volume"></i></a></li>
+                                <li class="a"><i class="fab fa-whatsapp-square"></i></li>
+
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <img src="images/profile-1.png" alt="">
+                        <div class="text1">Abdullah Al Emon</div>
+                        <p>ID:191311022</p>
+                        <p>
+                            <ul class="b">
+                                <li class="a"> <a href="https://www.facebook.com/emon.tasveer1301" target="_blank"><i class="fab fa-facebook-f" >  </i></a></li>
+                                <li class="a"><a href="tel:01724066715"><i class="fas fa-phone-volume"></i></a></li>
+                                <li class="a"><i class="fab fa-whatsapp-square"></i></li>
+
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <img src="images/profile-1.png" alt="">
+                        <div class="text1">Shah Noor Rahman</div>
+                        <p>ID:191311023</p>
+                        <p>
+                            <ul class="b">
+                                <li class="a"> <a href="https://www.facebook.com/md.s.rahman.1213/" target="_blank"><i class="fab fa-facebook-f" >  </i></a></li>
+                                <li class="a"><a href="tel:01750087002"><i class="fas fa-phone-volume"></i></a><i class="fas fa-phone-volume"></i></li>
+                                <li class="a"><i class="fab fa-whatsapp-square"></i></li>
+
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <img src="images/profile-2.png" alt="">
+                        <div class="text1">TASNIA AZMI</div>
+                        <p>ID:191311029</p>
+                        <p>
+                            <ul class="b">
+                                <li class="a"> <a href="http://www.facebook.com" target="_blank"><i class="fab fa-facebook-f" >  </i></a></li>
+                                <li class="a"><a href="tel"><i class="fas fa-phone-volume"></i></a></li>
+                                <li class="a"><i class="fab fa-whatsapp-square"></i></li>
+
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <img src="images/profile-2.png" alt="">
+                        <div class="text1">Rifah Tasnia</div>
+                        <p>ID:191311035</p>
+                        <p>
+                            <ul class="b">
+                                <li class="a"> <a href="http://www.facebook.com" target="_blank"><i class="fab fa-facebook-f" >  </i></a></li>
+                                <li class="a"><a href="tel"><i class="fas fa-phone-volume"></i></a></li>
+                                <li class="a"><i class="fab fa-whatsapp-square"></i></li>
+
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <img src="images/profile-1.png" alt="">
+                        <div class="text1">Rabby Islam</div>
+                        <p>ID:191311037</p>
+                        <p>
+                            <ul class="b">
+                                <li class="a"> <a href="https://www.facebook.com/sojol.rabby" target="_blank"><i class="fab fa-facebook-f" >  </i></a></li>
+                                <li class="a"><a href="tel:01789652484"><i class="fas fa-phone-volume"></i></a></li>
+                                <li class="a"><i class="fab fa-whatsapp-square"></i></li>
+
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <img src="images/profile-1.png" alt="">
+                        <div class="text1">Md. Shamiul Islam</div>
+                        <p>ID:191311038</p>
+                        <p>
+                            <ul class="b">
+                                <li class="a"> <a href="http://www.facebook.com" target="_blank"><i class="fab fa-facebook-f" >  </i></a></li>
+                                <li class="a"><a href="tel:01717424713"><i class="fas fa-phone-volume"></i></a></li>
+                                <li class="a"><i class="fab fa-whatsapp-square"></i></li>
+
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <img src="images/profile-1.png" alt="">
+                        <div class="text1">Sohanur Rahman</div>
+                        <p>ID:191311058</p>
+                        <p>
+                            <ul class="b">
+                                <li class="a"> <a href="https://www.facebook.com/sohanur.rahman149/" target="_blank"><i class="fab fa-facebook-f" >  </i></a></li>
+                                <li class="a"><a href="tel:01759229215"><i class="fas fa-phone-volume"></i></a></li>
+                                <li class="a"><i class="fab fa-whatsapp-square"></i></li>
+
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+
+
+
+
+                <!--stu-->
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- contact section start -->
+    <section class="contact" id="contact">
+        <div class="max-width">
+            <h2 class="title">Contact </h2>
+            <div class="contact-content">
+                <div class="column left">
+                    <div class="text">University Links</div>
+                    <div>
+                        <ul>
+                            <li>
+                                <a href="https://vu.edu.bd/"> <button> Vu </button></li>
+                            </a>
+                            <li>
+                                <a href="https://www.facebook.com/groups/312448452239956"> <button>CSE Group</button></li>
+                            </a>
+                            <li><a href="https://www.facebook.com/vu.edu"><button>VU FB</button></li></a>
+                        </ul>
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="column right">
+            <div class="text">
+
+
+            </div>
+
+
+        </div>
+        </div>
+    </section>
+
+    <!-- footer section start -->
+    <footer>
+        <span>Created By <a href="https://www.facebook.com/emon.tasveer1301/">Emon</a> <a href="https://www.facebook.com/tm.bristy/">Bristy</a> | <span class="far fa-copyright"></span> 2020 All rights reserved.</span>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
